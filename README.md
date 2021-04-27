@@ -1,3 +1,8 @@
+## Build and test
+docker build . -t asterisk-buildenv
+docker run --rm -it -v "$(pwd)/test/etc-asterisk:/etc/asterisk" asterisk-buildenv asterisk -cvvv
+
+
 ## what is app_audiofork
 
 app_audiofork lets you integrate raw audio streams in your third party app by making minor adjustments to your asterisk dialplan. 
