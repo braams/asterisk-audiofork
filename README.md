@@ -1,6 +1,19 @@
 ## Build and test
+
 docker build . -t asterisk-buildenv
+
 docker run --rm -it -v "$(pwd)/test/etc-asterisk:/etc/asterisk" asterisk-buildenv asterisk -cvvv
+
+or
+
+docker run --rm -it -v "$(pwd)/app_audiofork.c:/asterisk-18.3.0/apps/app_audiofork.c" -v "$(pwd)/test/etc-asterisk:/etc/asterisk" asterisk-buildenv bash
+
+cd asterisk-18.3.0
+
+make && make install
+
+asterisk -cvvv
+
 console dial 100@audiofork
 
 ## what is app_audiofork
