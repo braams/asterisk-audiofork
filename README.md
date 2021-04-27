@@ -1,7 +1,7 @@
 ## Build and test
 docker build . -t asterisk-buildenv
 docker run --rm -it -v "$(pwd)/test/etc-asterisk:/etc/asterisk" asterisk-buildenv asterisk -cvvv
-
+console dial 100@audiofork
 
 ## what is app_audiofork
 
