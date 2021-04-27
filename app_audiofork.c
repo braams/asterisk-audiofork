@@ -597,8 +597,7 @@ static int setup_audiofork_ds(struct audiofork *audiofork,
   datastore->data = audiofork_ds;
 
 
-  ast_verb(2, "Connecting websocket server at %s\n",
-           audiofork->audiofork_ds->wsserver);
+  ast_verb(2, "Connecting websocket server at %s\n", audiofork_ds->wsserver);
 
   //check if we're running with TLS
   if (audiofork->has_tls == 1) {
