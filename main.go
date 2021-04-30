@@ -27,11 +27,11 @@ func echo(w http.ResponseWriter, r *http.Request) {
 			break
 		}
 		log.Println("recv:", mt, len(message))
-		//err = c.WriteMessage(mt, message)
-		//if err != nil {
-		//	log.Println("write:", err)
-		//	break
-		//}
+		err = c.WriteMessage(mt, message)
+		if err != nil {
+			log.Println("write:", err)
+			break
+		}
 	}
 }
 
